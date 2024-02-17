@@ -189,8 +189,8 @@ TextureImporter:
       name: PRZEDMIOTY_3
       rect:
         serializedVersion: 2
-        x: 18
-        y: 69
+        x: 19
+        y: 248
         width: 501
         height: 501
       alignment: 0
@@ -210,8 +210,8 @@ TextureImporter:
       name: PRZEDMIOTY_4
       rect:
         serializedVersion: 2
-        x: 662
-        y: 94
+        x: 544
+        y: 274
         width: 485
         height: 452
       alignment: 0
@@ -223,6 +223,27 @@ TextureImporter:
       bones: []
       spriteID: e86429ebaba41524688e892ae1717430
       internalID: -539042612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PRZEDMIOTY_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 190
+        width: 354
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0a6e0e42671aec4a8d3bf02d89cdfad
+      internalID: 604487803
       vertices: []
       indices: 
       edges: []
@@ -243,6 +264,7 @@ TextureImporter:
       PRZEDMIOTY_2: 1646193666
       PRZEDMIOTY_3: -2089794009
       PRZEDMIOTY_4: -539042612
+      PRZEDMIOTY_5: 604487803
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

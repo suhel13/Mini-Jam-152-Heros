@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public CameraMovement cameraMovement;
     public Dictionary<string, int> villageResourses = new Dictionary<string, int>();
     public List<GameObject> toolsPrefabs = new List<GameObject>();
+    public PlayerMovement playerMovement;
 
     private void Awake()
     {

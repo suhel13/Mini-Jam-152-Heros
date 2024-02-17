@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class LevelGeneration : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] GameObject groundPanelPrefab;
+    [SerializeField] List<GameObject> groundPanels = new List<GameObject>();
+    
+    void GeneradeGroundPanel()
     {
-        
+        if(groundPanels.Count > 1)
+        {
+            Destroy(groundPanels[0]);
+            groundPanels.RemoveAt(0);
+        }
+
+        groundPanels.Add(Instantiate(groundPanelPrefab, groundPanels[0].transform.position + Vector3.up * 20, Quaternion.identity));
+        groundPanels[1].GetComponent<GroundPanelActivator>().SpawnObstacles();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if( groundPanels.Count <2 ) 
+        {
+            groundPanels.Add(Instantiate(groundPanelPrefab, groundPanels[0].transform.position + Vector3.up * 20, Quaternion.identity));
+            groundPanels[1].GetComponent<GroundPanelActivator>().SpawnObstacles();
+        }
+        if (groundPanels[1].transform.position.y < GameManager.instance.cameraMovement.transform.position.y)
+        {
+            GeneradeGroundPanel();
+        }
     }
 }
