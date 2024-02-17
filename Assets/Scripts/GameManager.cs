@@ -6,10 +6,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
-
     public CameraMovement cameraMovement;
-
     public Dictionary<string, int> villageResourses = new Dictionary<string, int>();
+    public List<GameObject> toolsPrefabs = new List<GameObject>();
 
     private void Awake()
     {
@@ -32,9 +31,9 @@ public class GameManager : MonoBehaviour
             villageResourses.Add(name, amount);
     }
 
-    public void FromBackPackToVillage()
+    public void FromBackpackToVillage()
     {
-        foreach(KeyValuePair<string, int> entry in BackPack.instance.inventory)
+        foreach(KeyValuePair<string, int> entry in Backpack.instance.inventory)
         {
             AddItemToVillageResourses(entry.Key, entry.Value);
         }

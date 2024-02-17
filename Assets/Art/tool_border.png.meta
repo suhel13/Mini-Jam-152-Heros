@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c4f364fec9f67fb409ed69f52610903d
+guid: ac1ca7fafe5ee0e429e75bbb55b9a882
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -121,112 +121,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: PRZEDMIOTY_0
-      rect:
-        serializedVersion: 2
-        x: 44
-        y: 872
-        width: 262
-        height: 250
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f71458091afb4ab4685651bfea010ac5
-      internalID: -883561966
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PRZEDMIOTY_1
-      rect:
-        serializedVersion: 2
-        x: 354
-        y: 802
-        width: 377
-        height: 378
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 27c3e8a7bd284494788f4fe76c39c2e4
-      internalID: -822265388
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PRZEDMIOTY_2
-      rect:
-        serializedVersion: 2
-        x: 777
-        y: 770
-        width: 421
-        height: 421
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d77d4b68bb6d8284bbf26371fce70247
-      internalID: 1646193666
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PRZEDMIOTY_3
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 69
-        width: 501
-        height: 501
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b09c5fa7b2a8c8b46b81ac57dd0e168b
-      internalID: -2089794009
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PRZEDMIOTY_4
-      rect:
-        serializedVersion: 2
-        x: 662
-        y: 94
-        width: 485
-        height: 452
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e86429ebaba41524688e892ae1717430
-      internalID: -539042612
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -237,12 +132,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      PRZEDMIOTY_0: -883561966
-      PRZEDMIOTY_1: -822265388
-      PRZEDMIOTY_2: 1646193666
-      PRZEDMIOTY_3: -2089794009
-      PRZEDMIOTY_4: -539042612
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BackPack : MonoBehaviour
+public class Backpack : MonoBehaviour
 {
-    public static BackPack instance { get; private set; }
+    public static Backpack instance { get; private set; }
     private void Awake()
     {
         if (instance == null)
