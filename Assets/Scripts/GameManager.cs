@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
     public CameraMovement cameraMovement;
+    public ItemUIPanelControler backpackUIPanelControler;
+    
     public Dictionary<string, int> villageResourses = new Dictionary<string, int>();
+    public ItemUIPanelControler villageUIPanelControler;
     public List<GameObject> toolsPrefabs = new List<GameObject>();
     public PlayerMovement playerMovement;
 
@@ -15,7 +19,8 @@ public class GameManager : MonoBehaviour
     public gameState state;
     public GameObject VillagePanel;
     public GameObject ToolSelectPanel;
-    public GameObject Run;
+    public GameObject level;
+    public GameObject levelPrefab;
     public GameObject EndScreanPanel;
 
     private void Awake()
@@ -30,7 +35,10 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
     }
-
+    void Start()
+    {
+        backpackUIPanelControler = level.GetComponentInChildren<ItemUIPanelControler>();
+    }
     public void AddItemToVillageResourses(string name, int amount)
     {
         if (!villageResourses.ContainsKey(name))
@@ -75,10 +83,11 @@ public class GameManager : MonoBehaviour
                 VillagePanel.SetActive(true);
                 break;
             case gameState.ToolSelect:
+                ResetLevel();
                 ToolSelectPanel.SetActive(true);
                 break;
             case gameState.Run:
-                //Reset run
+                BeginRun();
                 break;
             case gameState.EndScrean:
                 EndScreanPanel.SetActive(true);
@@ -88,5 +97,29 @@ public class GameManager : MonoBehaviour
         }
 
         state = nextState;
+    }
+    void ResetLevel()
+    {
+        Destroy(level);
+        level = Instantiate(levelPrefab, Vector3.zero, Quaternion.identity);
+        cameraMovement.transform.position = new Vector3(0, -5, -10);
+        playerMovement = level.GetComponentInChildren<PlayerMovement>();
+        backpackUIPanelControler = level.GetComponentInChildren<ItemUIPanelControler>();
+    }
+
+    void BeginRun()
+    {
+        if (toolsPrefabs.Count < 1)
+            return;
+        if (toolsPrefabs.Count < 2)
+        {
+            playerMovement.GetComponentInChildren<ToolsManager>().AddTools(toolsPrefabs[0], null);
+            return;
+        }
+        if(toolsPrefabs.Count < 3)
+        {
+            playerMovement.GetComponentInChildren<ToolsManager>().AddTools(toolsPrefabs[0], toolsPrefabs[1]);
+            return;
+        }
     }
 }

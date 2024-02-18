@@ -8,6 +8,8 @@ public class Obstacles : MonoBehaviour
     [HideInInspector] public bool canPlayerInteract = true;
     [SerializeField] string itemName;
     [SerializeField] int amount;
+    [SerializeField] GameObject unUsedSprite;
+    [SerializeField] GameObject usedSprite;
 
     [Flags]
     public enum ObstaclesType
@@ -21,8 +23,24 @@ public class Obstacles : MonoBehaviour
     }
 
     public ObstaclesType type;
+
+    private void Start()
+    {
+        if(usedSprite)
+            usedSprite.SetActive(false);
+    }
     public virtual void interact()
     {
         canPlayerInteract = false;
+        unUsedSprite.SetActive(false);
+
+        if (usedSprite == null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            usedSprite.SetActive(true);
+        }
     }
 }

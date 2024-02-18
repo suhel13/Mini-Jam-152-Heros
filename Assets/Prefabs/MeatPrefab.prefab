@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7084529092328262628}
   - component: {fileID: 4551328732231953511}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Un Used
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,6 +133,8 @@ MonoBehaviour:
   canPlayerInteract: 1
   itemName: Meat
   amount: 1
+  unUsedSprite: {fileID: 673126702920068770}
+  usedSprite: {fileID: 0}
   type: 16
 --- !u!60 &1640705953941321719
 PolygonCollider2D:

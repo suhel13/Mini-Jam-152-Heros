@@ -17,14 +17,14 @@ public class LevelGeneration : MonoBehaviour
 
         groundPanels.Add(Instantiate(groundPanelPrefab, groundPanels[0].transform.position + Vector3.up * 20, Quaternion.identity));
         groundPanels[1].GetComponent<GroundPanelActivator>().SpawnObstacles();
+        groundPanels[1].transform.parent = transform;
     }
 
     private void Update()
     {
         if( groundPanels.Count <2 ) 
         {
-            groundPanels.Add(Instantiate(groundPanelPrefab, groundPanels[0].transform.position + Vector3.up * 20, Quaternion.identity));
-            groundPanels[1].GetComponent<GroundPanelActivator>().SpawnObstacles();
+            GeneradeGroundPanel();
         }
         if (groundPanels[1].transform.position.y < GameManager.instance.cameraMovement.transform.position.y)
         {

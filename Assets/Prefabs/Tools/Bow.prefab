@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1620698683485376519}
-  - component: {fileID: 4260005582910187506}
   - component: {fileID: 4220513666767887834}
+  - component: {fileID: 6589394983629243189}
   m_Layer: 0
   m_Name: Bow
   m_TagString: Untagged
@@ -30,23 +30,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2508559986735587945}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4260005582910187506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1162446446638785821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e635f4f065b6264fb4051a1f6abe20f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 8
-  canInteractWithType: 5
 --- !u!212 &4220513666767887834
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -99,3 +86,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6589394983629243189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162446446638785821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9240b72f61d58734ba7f96a7f89514b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 8
+  canInteractWithType: 36
+  arrowPrefab: {fileID: 2562952078251292064, guid: 427a19341f2e67542af711fea710ad5d, type: 3}
+  arrowSpawnPoint: {fileID: 2508559986735587945}
+--- !u!1 &3043449368623871467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2508559986735587945}
+  m_Layer: 0
+  m_Name: Arrow Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2508559986735587945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3043449368623871467}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.48, y: -0.43, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1620698683485376519}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

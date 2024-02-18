@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2464619553976388941}
   - component: {fileID: 8910788812734031319}
   - component: {fileID: 6402264242699600399}
+  - component: {fileID: -1701011231327505898}
   m_Layer: 0
   m_Name: Animal
   m_TagString: Untagged
@@ -99,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10ac1b68c0e1b14e970a1d22fbd98fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  escapeTrigerRange: 4
+  escapeTrigerRange: 3.5
   speed: 8
 --- !u!114 &8910788812734031319
 MonoBehaviour:
@@ -202,3 +203,21 @@ PolygonCollider2D:
       - {x: -0.645, y: -0.24}
       - {x: -0.615, y: -0.22999999}
   m_UseDelaunayMesh: 0
+--- !u!114 &-1701011231327505898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7292215147224761997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c185f4d3e76ce6418fa3ac9bcc18cfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canPlayerInteract: 1
+  itemName: 
+  amount: 0
+  unUsedSprite: {fileID: 7292215147224761997}
+  usedSprite: {fileID: 0}
+  type: 4

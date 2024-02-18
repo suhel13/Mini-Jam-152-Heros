@@ -42,7 +42,6 @@ public class SpawnManager : MonoBehaviour
 
             case Obstacles.ObstaclesType.EnemyBow:
                 float temp = Random.Range(-1f, 1f);
-                Debug.Log(temp);
                 if (temp < 0)
                     return Instantiate(enemyBowPrefab, pos + Vector2.right * Random.Range(-7.2f, -8.2f), Quaternion.Euler(0, 0, 0));
                 else

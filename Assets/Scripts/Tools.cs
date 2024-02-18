@@ -15,9 +15,10 @@ public class Tools : MonoBehaviour
         Hands = 32
     }
 
-    [SerializeField] ToolsType type;
+    public ToolsType type;
     public Obstacles.ObstaclesType canInteractWithType;
-    public void interact()
+
+    public virtual void interact()
     { 
         
     }

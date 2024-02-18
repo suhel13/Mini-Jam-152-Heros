@@ -49,6 +49,8 @@ MonoBehaviour:
   canPlayerInteract: 1
   itemName: IronOre
   amount: 1
+  unUsedSprite: {fileID: 8167242908179707697}
+  usedSprite: {fileID: 0}
   type: 8
 --- !u!61 &3048901114555659182
 BoxCollider2D:
@@ -106,7 +108,7 @@ GameObject:
   - component: {fileID: 7206070334108367207}
   - component: {fileID: 6132483190435846613}
   m_Layer: 0
-  m_Name: Square
+  m_Name: UnUsed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 7876508580493040658}
   - component: {fileID: 1533134707669467965}
   m_Layer: 0
-  m_Name: ground Sprite
+  m_Name: groundPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

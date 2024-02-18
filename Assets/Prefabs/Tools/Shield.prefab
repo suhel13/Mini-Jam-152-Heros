@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  canInteractWithType: 1
+  canInteractWithType: 0
 --- !u!212 &2222191414400020837
 SpriteRenderer:
   m_ObjectHideFlags: 0
