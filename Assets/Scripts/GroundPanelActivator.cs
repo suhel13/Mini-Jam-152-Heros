@@ -22,16 +22,16 @@ public class GroundPanelActivator : MonoBehaviour
     public void SpawnObstacle(Vector2 pos)
     {
         float random = Random.Range(0f, 1f)*100;    
-        if(random < 25f)
+        if(random < 15f)
         {
             //spawn nothig
         }
-        else if (random < 40f)
+        else if (random < 35f)
         {
             //spawm well
             SpawnManager.instance.SpawnObstacle(Obstacles.ObstaclesType.Well, pos).transform.SetParent(transform);
         }
-        else if(random < 65f)
+        else if(random < 55f)
         {
             //spawn enemy mele
             SpawnManager.instance.SpawnObstacle(Obstacles.ObstaclesType.EnemyMele, pos).transform.SetParent(transform);

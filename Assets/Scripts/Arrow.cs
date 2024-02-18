@@ -25,4 +25,14 @@ public class Arrow : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        HpManager targetHpMan;
+        if(collision.gameObject.TryGetComponent(out targetHpMan))
+        {
+            targetHpMan.TakeDamage(1);
+        }
+        Destroy(gameObject);
+    }
 }

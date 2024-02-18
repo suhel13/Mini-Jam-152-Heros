@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2421756553390270627}
   - component: {fileID: 7499003914611327594}
+  - component: {fileID: 3737349338010650280}
+  - component: {fileID: 8763441532069726117}
+  - component: {fileID: 3162258659343655674}
   m_Layer: 0
   m_Name: EnemyMele
   m_TagString: Untagged
@@ -86,6 +89,62 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3737349338010650280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4114344510290002325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d43c8a2ee6ac00449c9646ccf14a16b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 3
+  cooldownDuration: 1
+  maxOffCenterPosition: 5
+--- !u!114 &8763441532069726117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4114344510290002325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61705bd8e2c0a884abc0f6ee7bcb0e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 1
+  maxHp: 1
+--- !u!50 &3162258659343655674
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4114344510290002325}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 2
 --- !u!1 &5493880376575532556
 GameObject:
   m_ObjectHideFlags: 0

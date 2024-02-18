@@ -13,6 +13,13 @@ public class CameraMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb2D.velocity = Vector2.up * cameraSpeed;
+        if (GameManager.instance.state == GameManager.gameState.Run)
+        {
+            rb2D.velocity = Vector2.up * cameraSpeed;
+        }
+        else
+        {
+            rb2D.velocity = Vector2.zero;
+        }
     }
 }

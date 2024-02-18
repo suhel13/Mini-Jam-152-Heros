@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAIBow : MonoBehaviour
+public class EnemyAIBow : MonoBehaviour, IDeathAble
 {
     [SerializeField] float cooldownDuration;
     float cooldownTimer;
 
     [SerializeField] GameObject arrowPrefab;
     [SerializeField] Transform arrowSpawnPoint;
+
+    public void Death()
+    {
+        Destroy(gameObject);
+    }
 
     private void Update()
     {

@@ -8,20 +8,23 @@ public class ToolsManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Obstacles obstacle;
-        if( collision.TryGetComponent<Obstacles>(out obstacle))
+        if (GameManager.instance.state == GameManager.gameState.Run)
         {
-            foreach(Tools tool in tools)
+            Obstacles obstacle;
+            if (collision.TryGetComponent<Obstacles>(out obstacle))
             {
-                if (tool != null)
+                foreach (Tools tool in tools)
                 {
-                    if ((tool.canInteractWithType & obstacle.type) == obstacle.type)
+                    if (tool != null)
                     {
-                        if (obstacle.canPlayerInteract)
+                        if ((tool.canInteractWithType & obstacle.type) == obstacle.type)
                         {
-                            Debug.Log("Interact");
-                            obstacle.interact();
-                            tool.interact();
+                            if (obstacle.canPlayerInteract)
+                            {
+                                Debug.Log("Interact");
+                                obstacle.interact();
+                                tool.interact();
+                            }
                         }
                     }
                 }

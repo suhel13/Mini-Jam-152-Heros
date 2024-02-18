@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IDeathAble
 {
     [SerializeField] float playerSpeed;
     Vector2 inputVector;
@@ -19,7 +19,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb2D.velocity = inputVector.normalized * playerSpeed;
-        rb2D.velocity += Vector2.up * GameManager.instance.cameraMovement.cameraSpeed;
+        if (GameManager.instance.state == GameManager.gameState.Run)
+        {
+            rb2D.velocity = inputVector.normalized * playerSpeed;
+            rb2D.velocity += Vector2.up * GameManager.instance.cameraMovement.cameraSpeed;
+        }
+    }
+
+    public void Death()
+    {
+        GameManager.instance.SwitchToState(GameManager.gameState.EndScrean);
     }
 }

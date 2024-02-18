@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 1096104241543732023}
   - component: {fileID: 2109016795836275906}
   - component: {fileID: 5796908258953361526}
+  - component: {fileID: 6782174335681590416}
   m_Layer: 0
   m_Name: EnemyBow
   m_TagString: Untagged
@@ -217,3 +218,17 @@ MonoBehaviour:
   cooldownDuration: 1
   arrowPrefab: {fileID: 2562952078251292064, guid: 427a19341f2e67542af711fea710ad5d, type: 3}
   arrowSpawnPoint: {fileID: 7538176711675317354}
+--- !u!114 &6782174335681590416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9177793740646694903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61705bd8e2c0a884abc0f6ee7bcb0e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 1
+  maxHp: 1
