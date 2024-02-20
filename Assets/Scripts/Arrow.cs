@@ -15,7 +15,7 @@ public class Arrow : MonoBehaviour
 
     public void SetVelocity( Vector3 targetPos)
     {
-        rb2D.velocity = (targetPos - transform.position ).normalized * speed;
+        rb2D.velocity = (targetPos - transform.position ).normalized * (speed + GameManager.instance.cameraMovement.cameraSpeed) ;
     }
 
     private void Update()

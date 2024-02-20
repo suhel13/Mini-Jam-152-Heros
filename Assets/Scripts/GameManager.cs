@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Xml;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -9,6 +10,10 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
     public CameraMovement cameraMovement;
     public ItemUIPanelControler backpackUIPanelControler;
+
+    public float minCamSpeed;
+    public float maxCamSpeed;
+    public float maxSpeedDistance;
     
     public Dictionary<string, int> villageResourses = new Dictionary<string, int>();
     public ItemUIPanelControler villageUIPanelControler;
@@ -39,12 +44,28 @@ public class GameManager : MonoBehaviour
     {
         backpackUIPanelControler = level.GetComponentInChildren<ItemUIPanelControler>();
     }
+    private void Update()
+    {
+        cameraMovement.cameraSpeed = CalculateActualCameraSpeed();
+        if (state == gameState.Run && Mathf.Abs(cameraMovement.transform.position.y - playerMovement.transform.position.y) > 5)
+        {
+            playerMovement.transform.position = new Vector3 (cameraMovement.transform.position.x, cameraMovement.transform.position.y,0);
+            playerMovement.GetComponent<HpManager>().TakeDamage(1);
+
+        }
+    }
     public void AddItemToVillageResourses(string name, int amount)
     {
-        if (!villageResourses.ContainsKey(name))
+        if (villageResourses.ContainsKey(name))
+        {
             villageResourses[name] += amount;
+            villageUIPanelControler.UpdateItemUIControler(name, villageResourses[name]);
+        }
         else
+        {
             villageResourses.Add(name, amount);
+            villageUIPanelControler.CreateItemUIControler(name, Backpack.instance.GetIconByName(name), amount);
+        }
     }
 
     public void FromBackpackToVillage()
@@ -71,6 +92,7 @@ public class GameManager : MonoBehaviour
                 break;
             case gameState.EndScrean:
                 EndScreanPanel.SetActive(false);
+                backpackUIPanelControler.gameObject.SetActive(false);
                 break;
             default:
                 break;
@@ -81,6 +103,7 @@ public class GameManager : MonoBehaviour
         {
             case gameState.Village:
                 VillagePanel.SetActive(true);
+                FromBackpackToVillage();
                 break;
             case gameState.ToolSelect:
                 ResetLevel();
@@ -121,5 +144,11 @@ public class GameManager : MonoBehaviour
             playerMovement.GetComponentInChildren<ToolsManager>().AddTools(toolsPrefabs[0], toolsPrefabs[1]);
             return;
         }
+    }
+
+    float CalculateActualCameraSpeed()
+    {
+        float speed = (cameraMovement.transform.position.y + 5) / (maxSpeedDistance + 5) * (maxCamSpeed - minCamSpeed) + minCamSpeed;
+        return speed<maxCamSpeed ? speed : maxCamSpeed; 
     }
 }

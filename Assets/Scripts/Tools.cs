@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Tools : MonoBehaviour
 {
     [Flags] public enum ToolsType
@@ -19,7 +20,7 @@ public class Tools : MonoBehaviour
     public Obstacles.ObstaclesType canInteractWithType;
 
     public virtual void interact()
-    { 
-        
+    {
+        GetComponent<AudioSource>().Play();       
     }
 }

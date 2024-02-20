@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class HpManager : MonoBehaviour
 {
-    [SerializeField] int hp;
+    public int hp;
     [SerializeField] int maxHp;
+    public enum damageType { arrow, sword}
 
     public void TakeDamage(int amount)
     {

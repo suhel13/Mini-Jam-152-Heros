@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ToolsManager : MonoBehaviour
 {
-    [SerializeField] List<Tools> tools = new List<Tools>();
+    public List<Tools> tools = new List<Tools>();
     [SerializeField] List<Transform> toolsPositions = new List<Transform>();
 
     public void AddTools(GameObject tool1Prefab, GameObject tool2Prefab)

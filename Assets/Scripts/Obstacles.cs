@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Obstacles : MonoBehaviour
 {
     [HideInInspector] public bool canPlayerInteract = true;
@@ -19,7 +20,8 @@ public class Obstacles : MonoBehaviour
         Animals = 4,
         Ore = 8,
         Meat = 16,
-        EnemyBow = 32
+        EnemyBow = 32,
+        EnemyArrow = 64
     }
 
     public ObstaclesType type;
@@ -33,6 +35,10 @@ public class Obstacles : MonoBehaviour
     {
         canPlayerInteract = false;
         unUsedSprite.SetActive(false);
+        GetComponent<AudioSource>().Play();
+
+        if(amount>0)
+            Backpack.instance.AddItemToInventory(itemName, amount);
 
         if (usedSprite == null)
         {
@@ -42,5 +48,9 @@ public class Obstacles : MonoBehaviour
         {
             usedSprite.SetActive(true);
         }
+    }
+    private void Reset()
+    {
+        GetComponent<AudioSource>().playOnAwake = false;
     }
 }

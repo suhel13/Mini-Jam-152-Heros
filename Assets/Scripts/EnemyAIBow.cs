@@ -17,7 +17,7 @@ public class EnemyAIBow : MonoBehaviour, IDeathAble
 
     private void Update()
     {
-        if (cooldownTimer < cooldownDuration)
+        if (cooldownTimer < cooldownDuration/ CooldownMod())
         {
             cooldownTimer += Time.deltaTime;
         }
@@ -26,6 +26,8 @@ public class EnemyAIBow : MonoBehaviour, IDeathAble
             Shoot();
         }
     }
+    float CooldownMod()
+    { return GameManager.instance.cameraMovement.cameraSpeed *0.25f + 0.5f; }
 
     void Shoot()
     {

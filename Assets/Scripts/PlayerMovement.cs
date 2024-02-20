@@ -7,12 +7,14 @@ public class PlayerMovement : MonoBehaviour, IDeathAble
     [SerializeField] float playerSpeed;
     Vector2 inputVector;
     Rigidbody2D rb2D;
+    public HpBarControler hpBarControler;
     private void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
     }
     private void Update()
     {
+        hpBarControler.SetHpBar(GetComponent<HpManager>().hp);
         inputVector.x = Input.GetAxisRaw("Horizontal");
         inputVector.y = Input.GetAxisRaw("Vertical");
     }

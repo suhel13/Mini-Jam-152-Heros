@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.U2D.Aseprite;
-using UnityEditor.UIElements;
+
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class Bow : Tools
 {

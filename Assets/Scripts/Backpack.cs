@@ -25,10 +25,10 @@ public class Backpack : MonoBehaviour
 
     public void AddItemToInventory(string name, int amount)
     {
-        if (!inventory.ContainsKey(name))
+        if (inventory.ContainsKey(name))
         {
             inventory[name] += amount;
-            GameManager.instance.backpackUIPanelControler.UpdateItemUIControler(name, amount);
+            GameManager.instance.backpackUIPanelControler.UpdateItemUIControler(name, inventory[name]);
         }
         else
         {
@@ -37,17 +37,18 @@ public class Backpack : MonoBehaviour
         }
     }
 
-    Sprite GetIconByName(string name)
+    public Sprite GetIconByName(string name)
     {
         switch (name)
         {
-            case "wather":
+            case "Wather":
                 return watherIcon;
-            case "meat":
+            case "Meat":
                 return meatIcon;
-            case "ironOre":
+            case "IronOre":
                 return ironIcon;
             default:
+                Debug.Log(name + " - Wrong name no Icon");
                 return null;
         }
     }
